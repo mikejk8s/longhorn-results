@@ -1,0 +1,27 @@
+cloud_provider:
+    name: gce
+    # Note the pipe as this is what indicates a multiline string
+    customCloudProvider: |-
+      [Global]
+      token-url = <token-url, optional>
+      token-body = <token-body, optional>
+      # project-id and network-project-id can either be the numeric or string-based unique identifier that starts with [a-z].
+      project-id = <project-id, optional>
+      ## network-project-id refers to the project which owns the network being used.
+      network-project-id = <network-project-id, optional>
+      network-name = <network-name, optional>
+      subnetwork-name = <subnetwork-name, optional>
+      ## secondary-range-name is the name of the secondary range to allocate IP aliases. The secondary range must be present on the subnetwork the cluster is attached to.
+      secondary-range-name = <secondary-range-name, optional>
+      node-tags = <node-tags, optional>
+      node-instance-prefix = <node-instance-prefix, optional>
+      regional = <regional, optional>
+      multizone = <multizone, optional>
+      ## api-endpoint is the GCE compute API endpoint to use. If this is blank, then the default endpoint is used.
+      api-endpoint = <api-endpoint, optional>
+      ## container-api-endpoint is the GCE container API endpoint to use. If this is blank, then the default endpoint is used.
+      container-api-endpoint = <container-api-endpoint, optional>
+      ## local-zone specifies the GCE zone that gce cloud client instance is located in (i.e. where the controller will be running). If this is blank, then the local zone will be discovered via the metadata server.
+      local-zone = <local-zone, optional>
+      ## alpha-features defaults to none, for example: MyFeatureFlag
+      alpha-features = <alpha-features, optional>
