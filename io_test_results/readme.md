@@ -80,3 +80,5 @@ kubectl port-forward service/longhorn-three-replica 8009:80
 11. Download results
 wget --recursive http://127.0.0.1:8009/server/
 
+
+#### ./generate-py is to generate html indexes seen in the dirs
