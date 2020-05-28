@@ -82,3 +82,148 @@ wget --recursive http://127.0.0.1:8009/server/
 
 
 #### ./generate-py is to generate html indexes seen in the dirs
+
+```bash
+.
+├── config.yaml
+├── dbench.yaml
+├── generate-index.py
+├── index.html
+├── io_test_results
+│   ├── gcp
+│   │   ├── index.html
+│   │   ├── longhorn-1-replica-1000gbpvc-1-readops_latency.png
+│   │   ├── longhorn-1-replica-1000gbpvc-1-writeops_latency.png
+│   │   ├── longhorn-1-replica-1000gbpvc-2-readops_latency.png
+│   │   ├── longhorn-1-replica-1000gbpvc-2-writeops_latency.png
+│   │   ├── longhorn-1-replica-1000gbpvc-3-readops_latency.png
+│   │   ├── longhorn-1-replica-1000gbpvc-3-witeops_latency.png
+│   │   ├── longhorn-1-replicas-1000gpvc-1
+│   │   │   ├── benchmarks
+│   │   │   │   ├── index.html
+│   │   │   │   ├── randread-01.json
+│   │   │   │   ├── randread-02.json
+│   │   │   │   ├── randread-04.json
+│   │   │   │   ├── randread-08.json
+│   │   │   │   ├── randread-16.json
+│   │   │   │   ├── randread-32.json
+│   │   │   │   ├── randwrite-01.json
+│   │   │   │   ├── randwrite-02.json
+│   │   │   │   ├── randwrite-04.json
+│   │   │   │   ├── randwrite-08.json
+│   │   │   │   ├── randwrite-16.json
+│   │   │   │   └── randwrite-32.json
+│   │   │   └── index.html
+│   │   ├── longhorn-1-replicas-1000gpvc-2
+│   │   │   ├── benchmarks
+│   │   │   │   ├── index.html
+│   │   │   │   ├── randread-01.json
+│   │   │   │   ├── randread-02.json
+│   │   │   │   ├── randread-04.json
+│   │   │   │   ├── randread-08.json
+│   │   │   │   ├── randread-16.json
+│   │   │   │   ├── randread-32.json
+│   │   │   │   ├── randwrite-01.json
+│   │   │   │   ├── randwrite-02.json
+│   │   │   │   ├── randwrite-04.json
+│   │   │   │   ├── randwrite-08.json
+│   │   │   │   ├── randwrite-16.json
+│   │   │   │   └── randwrite-32.json
+│   │   │   └── index.html
+│   │   ├── longhorn-1-replicas-1000gpvc-3
+│   │   │   ├── benchmarks
+│   │   │   │   ├── index.html
+│   │   │   │   ├── randread-01.json
+│   │   │   │   ├── randread-02.json
+│   │   │   │   ├── randread-04.json
+│   │   │   │   ├── randread-08.json
+│   │   │   │   ├── randread-16.json
+│   │   │   │   ├── randread-32.json
+│   │   │   │   ├── randwrite-01.json
+│   │   │   │   ├── randwrite-02.json
+│   │   │   │   ├── randwrite-04.json
+│   │   │   │   ├── randwrite-08.json
+│   │   │   │   ├── randwrite-16.json
+│   │   │   │   └── randwrite-32.json
+│   │   │   └── index.html
+│   │   ├── longhorn-3-replicas-200gbpvc-1-readiops_latency.png
+│   │   ├── longhorn-3-replicas-200gbpvc-1-writeops_latency.png
+│   │   ├── longhorn-3-replicas-200gbpvc-2-readops-latency.png
+│   │   ├── longhorn-3-replicas-200gbpvc-2-writeops-latency.png
+│   │   ├── longhorn-3-replicas-200gbpvc-3-readops-latency.png
+│   │   ├── longhorn-3-replicas-200gbpvc-3-writeops-latency.png
+│   │   ├── longhorn-3-replicas-200gpvc-1
+│   │   │   ├── benchmarks
+│   │   │   │   ├── index.html
+│   │   │   │   ├── randread-01.json
+│   │   │   │   ├── randread-02.json
+│   │   │   │   ├── randread-04.json
+│   │   │   │   ├── randread-08.json
+│   │   │   │   ├── randread-16.json
+│   │   │   │   ├── randread-32.json
+│   │   │   │   ├── randwrite-01.json
+│   │   │   │   ├── randwrite-02.json
+│   │   │   │   ├── randwrite-04.json
+│   │   │   │   ├── randwrite-08.json
+│   │   │   │   ├── randwrite-16.json
+│   │   │   │   └── randwrite-32.json
+│   │   │   └── index.html
+│   │   ├── longhorn-3-replicas-200gpvc-2
+│   │   │   ├── benchmarks
+│   │   │   │   ├── index.html
+│   │   │   │   ├── randread-01.json
+│   │   │   │   ├── randread-02.json
+│   │   │   │   ├── randread-04.json
+│   │   │   │   ├── randread-08.json
+│   │   │   │   ├── randread-16.json
+│   │   │   │   ├── randread-32.json
+│   │   │   │   ├── randwrite-01.json
+│   │   │   │   ├── randwrite-02.json
+│   │   │   │   ├── randwrite-04.json
+│   │   │   │   ├── randwrite-08.json
+│   │   │   │   ├── randwrite-16.json
+│   │   │   │   └── randwrite-32.json
+│   │   │   └── index.html
+│   │   └── longhorn-3-replicas-200gpvc-3
+│   │       ├── benchmarks
+│   │       │   ├── index.html
+│   │       │   ├── randread-01.json
+│   │       │   ├── randread-02.json
+│   │       │   ├── randread-04.json
+│   │       │   ├── randread-08.json
+│   │       │   ├── randread-16.json
+│   │       │   ├── randread-32.json
+│   │       │   ├── randwrite-01.json
+│   │       │   ├── randwrite-02.json
+│   │       │   ├── randwrite-04.json
+│   │       │   ├── randwrite-08.json
+│   │       │   ├── randwrite-16.json
+│   │       │   └── randwrite-32.json
+│   │       └── index.html
+│   ├── index.html
+│   ├── readme.md
+│   └── vsphere
+│       ├── generate-index.py
+│       ├── index.html
+│       ├── io\ read\ ceph.png
+│       ├── io\ read\ hostpath.png
+│       ├── io\ read\ longhorn\ default.png
+│       ├── io\ read\ longhorn\ external\ disk.png
+│       ├── io\ read\ portworx.png
+│       ├── io\ read\ storageos.png
+│       ├── io\ write\ ceph.png
+│       ├── io\ write\ hostpath.png
+│       ├── io\ write\ longhorn\ default.png
+│       ├── io\ write\ longhorn\ external\ disk.png
+│       ├── io\ write\ portworx.png
+│       └── io\ write\ storageos.png
+├── longhorn-1-replica.yaml
+├── longhorn-3-replica.yaml
+├── readme.md
+├── scratch
+│   ├── az-benchmarking-node.json
+│   ├── az-master-node.json
+│   └── index.html
+├── storageclass-1-replica.yaml
+└── storageclass-3-replicas.yaml
+```
